@@ -8,6 +8,17 @@
 ###### 藤井 祥平 [@ompugao](https://twitter.com/ompugao)
 
 ---
+# Gitってなに
+
+---
+# Gitってなに
+- 分散型バージョン管理システム
+	- リポジトリ（ファイル・ディレクトリ・更新履歴など）全体をミラーリング
+- svnと違い、インターネットがなくても**手元で** コミットができる → べんり！
+<img src="./images/distributed.png" alt="" width="30%">
+quoted from: https://git-scm.com/book/ja/v2/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6
+
+---
 
 # Gitのしくみ
 ###### だいじなことは２つ
@@ -21,34 +32,34 @@
 - revision(SHA-1 hash)
 - author(コミットをつくった人）
 - committer（コミットを適用した人）
-- ファイル(tree)のsnapshot
-- 一つ前のrevision(SHA-1 Hash)
+- ファイル(tree)のsnapshop
+
+- 一つ前のrevision(SHA-1 Hash) ← だいじ
 
 ---
 # commit / commit graph
 ## commit graphとは
 
 - commitでできたツリー構造
-    - commitに含まれていた "一つ前のrevision" をつかって木構造をつくっている
+    - commitに含まれていた "一つ前のrevision" をつかって木構造をつくる
 ---
 # commit / commit graph
-- commitにはrevision(hash)とディレクトリやファイルのスナップショットが入っている
+ commitにはrevision(hash)とディレクトリやファイルのスナップショットが入っている
 ![](./images/commit-and-tree.png)
 
 quoted from: https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E3%81%A8%E3%81%AF
 
 ---
 # commit / commit graph
-- 3commitくらいつくると、commitが数珠繋ぎになる
+3commitくらいつくると、commitが数珠繋ぎになる
 ![](./images/commits-and-parents.png)
-
 quoted from: https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E3%81%A8%E3%81%AF
 
 ---
 # commit / commit graph
-- branchを切るとこうなる
-![](./images/advance-master.png)
 
+branchを切るとこうなる
+![](./images/advance-master.png)
 quoted from: https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E3%81%A8%E3%81%AF
 
 ---
@@ -64,19 +75,16 @@ quoted from: https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%8
 	- commit graphがあるところ
 
 <!--
-
 <img src="./images/areas.png" alt="" width="55%">
-
 こちらから引用: https://git-scm.com/book/ja/v2/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-Git%E3%81%AE%E5%9F%BA%E6%9C%AC
-
 -->
+
 ---
 # ファイルの３状態
-- ファイルを編集するときのライフサイクルはこんな感じ
+ファイルを編集するときのライフサイクルはこんな感じ
 
 <img src="./images/mylifecycle.png" alt="" width="80%">
 
-- まぎらわしいので書いてませんが、stagedなfileをgit commitするとunmodifiedになります
 <!--
 - こちらから引用: https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-%E5%A4%89%E6%9B%B4%E5%86%85%E5%AE%B9%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%B8%E3%81%AE%E8%A8%98%E9%8C%B2
 -->
